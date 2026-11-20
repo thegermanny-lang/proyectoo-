@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>SkillSwap</title>
+  <link rel="stylesheet" href="./css/styles1.css">
+</head>
+<body>
+  <header class="zona-logo">
+    <img src="./assets/logo.webp" alt="logo" class="logo">
+  </header>
+
+  <!-- 2. Desde aquí hacia abajo empieza la imagen de fondo -->
+  <main class="zona-fondo">
+    <h1 class="titulo">SkillSwap</h1>
+    <div class="tarjeta-registro">
+        <form id="form-registro">
+            <div class="campo">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre">
+			</div>
+
+            <div class="campo">
+                <label for="correo">Correo:</label>
+                <input type="email" id="correo" name="correo">
+             </div>
+
+            <div class="campo">
+                <label for="numero">Número:</label>
+                <input type="tel" id="numero" name="numero">
+            </div>
+
+            <div class="campo">
+                <label for="ensena">Enseña:</label>
+                <input type="text" id="ensena" name="ensena">
+            </div>
+
+            <div class="campo">
+                <label for="busca">Busca:</label>
+                <input type="text" id="busca" name="busca">
+            </div>
+            <div class="campo">
+                <label for="foto">Subir Foto de Perfil</label>
+                <input type="file" id="foto" name="foto" accept="image/*">
+            </div>
+			
+            <button type="submit" class="btn-crear">Crear Cuenta</button>
+        </form>
+    </div>
+  </main>
+<script src="./js/registro.js"></script>
+</body>
+</html>

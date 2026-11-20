@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkillSwap - Intercambio de conocimientos</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, sans-serif; background: #f4f4f4; color: #333; }
+    .pantalla { display: none; width: 100%; min-height: 100vh; padding: 25px; }
+    .activa { display: block; }
+    .logo { text-align: center; font-weight: bold; color: #777; margin: 5px auto 15px; }
+    .logo span { display: block; font-size: 30px; color: #f44355; }
+    .contenedor { max-width: 850px; margin: auto; background: white; border-radius: 10px; overflow: hidden; }
+    .barra { height: 85px; background: #f44355; border-radius: 8px; color: white; text-align: center; padding: 20px; font-size: 28px; }
+    .subtitulo { text-align: center; color: #fff; background: #f44355; padding: 8px; font-size: 14px; }
+    /* Registro */
+    #registro { background: linear-gradient(#eeeeee, #eeeeee); }
+    .registro-caja { max-width: 430px; background: white; margin: 25px auto; padding: 22px; border-radius: 10px; box-shadow: 0 2px 8px #ccc; }
+    .registro-caja h2 { text-align: center; font-weight: normal; margin: 0 0 18px; }
+    label { display: block; font-size: 13px; margin: 10px 0 4px; }
+    input, textarea { width: 100%; padding: 9px; border: 1px solid #d7d7d7; border-radius: 6px; font-family: inherit; }
+    input[type="file"] { padding: 5px; font-size: 12px; }
+    button { border: 0; border-radius: 20px; background: #f44355; color: white; padding: 10px 20px; cursor: pointer; }
+    button:hover { background: #d93648; }
+    .centrar { text-align: center; margin-top: 18px; }
+    /* Inicio */
+    #inicio { background: #f5f5f5; }
+    .inicio-contenido { max-width: 1000px; margin: auto; }
+    .bienvenida { background: #f44355; color: white; border-radius: 9px; padding: 20px; text-align: center; }
+    .bienvenida h1 { font-size: 32px; margin: 5px; font-weight: normal; }
+    .bienvenida p { margin: 8px; }
+    .buscar { margin: 15px auto; max-width: 450px; display: flex; gap: 8px; }
+    .buscar input { background: white; }
+    .tarjetas { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 22px; }
+    .tarjeta { width: 180px; background: #6489f2; color: white; border-radius: 8px; padding: 14px; text-align: center; }
+    .avatar { width: 75px; height: 75px; margin: 0 auto 8px; border-radius: 50%; background: #4a5565; position: relative; }
+    .avatar:before { content: ''; width: 30px; height: 30px; background: #4a5565; border-radius: 50%; position: absolute; top: 7px; left: 22px; }
+    .avatar:after { content: ''; width: 56px; height: 30px; background: #4a5565; border-radius: 50% 50% 8px 8px; position: absolute; bottom: 2px; left: 9px; }
+    .tarjeta h3 { margin: 6px 0; font-size: 15px; }
+    .tarjeta p { font-size: 12px; min-height: 28px; }
+    .tarjeta button { font-size: 12px; padding: 7px 15px; }
+    /* Perfil */
+    #perfil { background: white; }
+    .perfil-contenido { max-width: 850px; margin: auto; }
+    .perfil-cabecera { background: #f44355; height: 45px; border-radius: 8px; }
+    .perfil-avatar { margin-top: -25px; text-align: center; }
+    .perfil-avatar .avatar { width: 90px; height: 90px; }
+    .perfil-avatar h2 { margin: 5px; font-weight: normal; }
+    .datos { padding: 20px; }
+    .datos p { margin: 5px 0; font-size: 14px; }
+    .habilidades { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 15px; }
+    .habilidad { background: #a9c0ff; border-radius: 8px; padding: 12px; min-width: 180px; }
+    .volver { display: block; margin: 20px 0 0 auto; }
+    @media (max-width: 600px) { .pantalla { padding: 12px; } .tarjeta { width: 46%; } .barra { font-size: 23px; } }
+  </style>
+</head>
+<body>
+
+  <!-- PANTALLA 1: REGISTRO -->
+  <section id="registro" class="pantalla activa">
+    <div class="logo"><span>✳</span>UTEPSA</div>
+    <div class="registro-caja">
+      <h2>Únete a SkillSwap</h2>
+      <form id="formularioRegistro">
+        <label>Nombre Completo:</label>
+        <input type="text" id="nombre" required>
+        <label>Correo:</label>
+        <input type="email" id="correo" required>
+        <label>Número:</label>
+        <input type="tel" id="numero" required>
+        <label>Enseña:</label>
+        <input type="text" id="ensena" required placeholder="Ej. Inglés">
+        <label>Busca:</label>
+        <input type="text" id="busca" required placeholder="Ej. Programación">
+        <label>Subir foto de perfil:</label>
+        <input type="file" id="foto" accept="image/*">
+        <div class="centrar"><button type="submit">Crear Cuenta</button></div>
+      </form>
+    </div>
+  </section>
+
+
+  <!-- PANTALLA 2: INICIO -->
+  <section id="inicio" class="pantalla">
+    <div class="inicio-contenido">
+      <div class="logo"><span>✳</span>UTEPSA</div>
+      <div class="bienvenida">
+        <h1>SkillSwap</h1>
+        <p>Bienvenido, intercambio de conocimiento y habilidades</p>
+        <p>Que aprenda y que yo enseñe</p>
+      </div>
+      <div class="buscar">
+        <input id="buscador" type="text" placeholder="Buscar una habilidad...">
+        <button onclick="buscarHabilidad()">Buscar</button>
+      </div>
+      <div id="listaUsuarios" class="tarjetas"></div>
+    </div>
+  </section>
+
+
+  <!-- PANTALLA 3: PERFIL -->
+  <section id="perfil" class="pantalla">
+    <div class="perfil-contenido">
+      <div class="logo"><span>✳</span>UTEPSA</div>
+      <div class="perfil-cabecera"></div>
+      <div class="perfil-avatar">
+        <div class="avatar"></div>
+        <h2 id="perfilNombre">Usuario</h2>
+      </div>
+      <div class="datos">
+        <h3>Datos Personales</h3>
+        <p>Correo: <span id="perfilCorreo"></span></p>
+        <p>Número: <span id="perfilNumero"></span></p>
+        <h3>Conocimiento</h3>
+        <div class="habilidades">
+          <div class="habilidad"><b>Enseña:</b><br><span id="perfilEnsena"></span></div>
+          <div class="habilidad"><b>Busca:</b><br><span id="perfilBusca"></span></div>
+        </div>
+        <p style="margin-top:15px"><b>Disponibilidad:</b><br>Tardes (Lunes a Viernes)</p>
+        <button class="volver" onclick="mostrarPantalla('inicio')">Volver</button>
+      </div>
+    </div>
+  </section>
+
+
+  <script>
+    // Array con algunos usuarios de ejemplo
+    let usuarios = [
+      { nombre: "Carlos", ensena: "Inglés", busca: "Excel", correo: "carlos@email.com" },
+      { nombre: "María", ensena: "Diseño", busca: "Programación", correo: "maria@email.com" },
+      { nombre: "Pedro", ensena: "Matemáticas", busca: "Inglés", correo: "pedro@email.com" },
+      { nombre: "Ana", ensena: "Fotografía", busca: "Diseño", correo: "ana@email.com" }
+    ];
+
+    // Datos del usuario que se registra
+    let miUsuario = {};
+
+
+    // Cambia de una pantalla a otra
+    function mostrarPantalla(id) {
+      let pantallas = document.querySelectorAll(".pantalla");
+      pantallas.forEach(function(pantalla) {
+        pantalla.classList.remove("activa");
+      });
+      document.getElementById(id).classList.add("activa");
+    }
+
+
+    // Cuando se envía el formulario de registro
+    document.getElementById("formularioRegistro").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      miUsuario = {
+        nombre: document.getElementById("nombre").value,
+        correo: document.getElementById("correo").value,
+        numero: document.getElementById("numero").value,
+        ensena: document.getElementById("ensena").value,
+        busca: document.getElementById("busca").value
+      };
+
+      // Agrega el usuario registrado al array
+      usuarios.push(miUsuario);
+      llenarTarjetas(usuarios);
+      mostrarPantalla("inicio");
+    });
+
+
+    // Crea las tarjetas de los usuarios en la página principal
+    function llenarTarjetas(lista) {
+      let contenedor = document.getElementById("listaUsuarios");
+      contenedor.innerHTML = "";
+
+      lista.forEach(function(usuario) {
+        let tarjeta = document.createElement("div");
+        tarjeta.className = "tarjeta";
+        tarjeta.innerHTML = `
+          <div class="avatar"></div>
+          <h3>${usuario.nombre}</h3>
+          <p>Enseña: ${usuario.ensena}<br>Busca: ${usuario.busca}</p>
+          <button onclick="verPerfil('${usuario.nombre}')">Contactar</button>
+        `;
+        contenedor.appendChild(tarjeta);
+      });
+    }
+
+
+    // Muestra los datos del usuario seleccionado
+    function verPerfil(nombre) {
+      let usuario = usuarios.find(function(persona) {
+        return persona.nombre === nombre;
+      });
+
+      if (usuario) {
+        document.getElementById("perfilNombre").textContent = usuario.nombre;
+        document.getElementById("perfilCorreo").textContent = usuario.correo || "No registrado";
+        document.getElementById("perfilNumero").textContent = usuario.numero || "No registrado";
+        document.getElementById("perfilEnsena").textContent = usuario.ensena;
+        document.getElementById("perfilBusca").textContent = usuario.busca;
+        mostrarPantalla("perfil");
+      }
+    }
+
+
+    // Busca usuarios según lo que enseñan o quieren aprender
+    function buscarHabilidad() {
+      let texto = document.getElementById("buscador").value.toLowerCase();
+      let resultados = usuarios.filter(function(usuario) {
+        return usuario.ensena.toLowerCase().includes(texto) ||
+               usuario.busca.toLowerCase().includes(texto) ||
+               usuario.nombre.toLowerCase().includes(texto);
+      });
+      llenarTarjetas(resultados);
+    }
+
+
+    // Al cargar la página, mostrar los usuarios de ejemplo
+    llenarTarjetas(usuarios);
+  </script>
+</body>
+</html>

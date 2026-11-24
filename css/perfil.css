@@ -1,0 +1,245 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Línea 9: Fondo general */
+body {
+  background-color: #f3f4f6;
+  color: #1f2937;
+  min-height: 100vh;
+}
+
+/* Línea 16: Barra superior azul oscuro */
+.barra-superior {
+  background-color: #172554;
+  height: 56px;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Línea 26: Enlace discreto para volver a inicio */
+.enlace-inicio {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+.btn-inicio {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #e2e8f0;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 14px;
+  font-size: 0.88rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-inicio:hover {
+  background-color: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+.enlace-inicio:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Línea 38: Ícono redondo de perfil arriba a la derecha */
+.icono-perfil-top {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icono-perfil-top svg {
+  width: 20px;
+  height: 20px;
+  fill: #475569;
+}
+
+/* Línea 54: Contenedor centrado de la página */
+.perfil-contenedor {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 36px 28px 60px;
+}
+
+/* Línea 61: Encabezado con título a la izquierda y botón a la derecha */
+.perfil-encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.perfil-titulo {
+  font-size: 1.85rem;
+  font-weight: 500;
+  color: #111827;
+  margin-bottom: 6px;
+}
+
+.perfil-subtitulo {
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+/* Línea 83: Botón Editar perfil (sin acción por ahora) */
+.btn-editar {
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 26px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-editar:hover {
+  background-color: #1d4ed8;
+}
+
+/* Línea 99: Tarjeta superior con foto/ícono y datos */
+.tarjeta-datos {
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  margin-bottom: 24px;
+}
+
+.zona-avatar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.perfil-foto {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.perfil-avatar-defecto {
+  width: 110px;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.perfil-avatar-defecto svg {
+  width: 105px;
+  height: 105px;
+  fill: #1f2937;
+}
+
+.info-usuario {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nombre-usuario {
+  font-size: 1.45rem;
+  font-weight: 500;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.linea-info {
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+/* Línea 155: Dos columnas para habilidades */
+.grid-habilidades {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+/* Línea 163: Estilo general de cajas con barra superior azul oscuro */
+.caja-seccion {
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+}
+
+.caja-header {
+  background-color: #172554;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 11px 18px;
+}
+
+.caja-cuerpo {
+  padding: 20px 18px;
+  min-height: 92px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items:center;
+  gap: 18px;
+  color: #1f2937;
+  font-size: 0.95rem;
+}
+
+.item-habilidad {
+  color: #1f2937;
+  font-size: 0.95rem;
+}
+
+.linea-disponibilidad {
+  width: 100%;
+  font-size: 0.95rem;
+  color: #1f2937;
+  line-height: 1.5;
+}
+
+.sin-perfil {
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  padding: 24px;
+  color: #4b5563;
+}
+
+/* Línea 207: Adaptación a pantallas pequeñas */
+@media (max-width: 768px) {
+  .perfil-encabezado {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-editar {
+    align-self: flex-start;
+  }
+
+  .tarjeta-datos {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .grid-habilidades {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,52 +1,49 @@
 <!DOCTYPE html>
+<html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>SkillSwap</title>
-  <link rel="stylesheet" href="./css/styles1.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkillSwap - Iniciar sesión</title>
+  <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-  <header class="zona-logo">
-    <img src="./assets/logo.webp" alt="logo" class="logo">
-  </header>
 
-  <!-- 2. Desde aquí hacia abajo empieza la imagen de fondo -->
-  <main class="zona-fondo">
-    <h1 class="titulo">SkillSwap</h1>
-    <div class="tarjeta-registro">
-        <form id="form-registro">
-            <div class="campo">
-                <label for="nombre">Nombre Completo:</label>
-                <input type="text" id="nombre" name="nombre">
-			</div>
+  <main class="pantalla-dividida">
+    <!-- Mitad 1: Presentación e ilustración -->
+    <section class="mitad mitad-info">
+      <div class="contenido-info">
+        <img src="./assets/logo.jpeg" alt="Logo SkillSwap" class="logo-info">
 
-            <div class="campo">
-                <label for="correo">Correo:</label>
-                <input type="email" id="correo" name="correo">
-             </div>
+        <h1 class="lema-principal">
+          Intercambia habilidades, conecta con otros estudiantes
+        </h1>
 
-            <div class="campo">
-                <label for="numero">Número:</label>
-                <input type="tel" id="numero" name="numero">
-            </div>
+        <p class="sublema">
+          Aprende algo nuevo compartiendo lo que ya sabes
+        </p>
 
-            <div class="campo">
-                <label for="ensena">Enseña:</label>
-                <input type="text" id="ensena" name="ensena">
-            </div>
+        <img src="./assets/fotoindex.jpeg" alt="Estudiantes intercambiando habilidades" class="ilustracion-login">
+      </div>
+    </section>
 
-            <div class="campo">
-                <label for="busca">Busca:</label>
-                <input type="text" id="busca" name="busca">
-            </div>
-            <div class="campo">
-                <label for="foto">Subir Foto de Perfil</label>
-                <input type="file" id="foto" name="foto" accept="image/*">
-            </div>
-			
-            <button type="submit" class="btn-crear">Crear Cuenta</button>
+    <!-- Mitad 2: Formulario de inicio de sesión -->
+    <section class="mitad mitad-login">
+      <div class="caja-login">
+        <img src="./assets/logo.jpeg" alt="Logo SkillSwap" class="logo-login">
+
+        <h1 class="titulo-bienvenida">Bienvenido a SkillSwap</h1>
+        <p class="instruccion-login">Inicie sesión para continuar</p>
+
+          <button type="button" id="btn-iniciar-sesion" class="btn-primario">Iniciar sesión</button>
         </form>
-    </div>
+
+        <button type="button" id="btn-invitado" class="btn-primario btn-invitado">
+          Ingresar como invitado
+        </button>
+      </div>
+    </section>
   </main>
-<script src="./js/registro.js"></script>
+
+  <script src="./js/login.js"></script>
 </body>
 </html>

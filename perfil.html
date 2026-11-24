@@ -1,31 +1,81 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Perfil - SkillSwap</title>
-  <link rel="stylesheet" href="./css/styles1.css">
+  <title>SkillSwap - Mi perfil</title>
+  <link rel="stylesheet" href="./css/perfil.css">
 </head>
 <body>
 
-  <header class="zona-logo">
-    <img src="./assets/logo.webp" alt="logo" class="logo">
+  <!-- Línea 14: Barra superior azul oscuro -->
+  <header class="barra-superior">
+    <button type="button" onclick="window.location.href='inicio.html'" class="btn-inicio" title="Volver a inicio">← Inicio</button>
+    <div class="icono-perfil-top" title="Mi perfil">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+      </svg>
+    </div>
   </header>
 
-  <main class="zona-fondo">
-    <h1 class="titulo">SkillSwap</h1>
+  <!-- Línea 24: Contenedor principal -->
+  <main class="perfil-contenedor">
 
-    <div class="tarjeta-registro">
-      <h2 class="subtitulo">Perfil del Estudiante</h2>
+    <!-- Línea 27: Título, subtítulo y botón Editar perfil -->
+    <div class="perfil-encabezado">
+      <div>
+        <h1 class="perfil-titulo">Mi perfil</h1>
+        <p class="perfil-subtitulo">Aquí puedes ver y editar tu información en SkillSwap</p>
+      </div>
+      <button type="button" id="btn-editar-perfil" class="btn-editar">Editar perfil</button>
+    </div>
 
-      <p><strong>Nombre Completo:</strong> <span id="ver-nombre">-</span></p>
-      <p><strong>Correo:</strong> <span id="ver-correo">-</span></p>
-      <p><strong>Número:</strong> <span id="ver-numero">-</span></p>
-      <p><strong>Enseña:</strong> <span id="ver-ensena">-</span></p>
-      <p><strong>Busca:</strong> <span id="ver-busca">-</span></p>
+    <!-- Línea 36: Mensaje si aún no hay registro -->
+    <div id="sin-perfil" class="sin-perfil" style="display: none;">
+      Aún no hay ningún perfil registrado. <a href="registro.html">Ir a registro</a>
+    </div>
 
-      <a href="./index.html">Volver al registro</a>
+    <!-- Línea 41: Contenido principal del perfil -->
+    <div id="contenido-perfil">
+
+      <!-- Línea 44: Tarjeta superior de datos personales -->
+      <section class="tarjeta-datos">
+        <div class="zona-avatar">
+          <img id="perfil-foto" src="" alt="Foto de perfil" class="perfil-foto" style="display: none;">
+          <div id="perfil-avatar-defecto" class="perfil-avatar-defecto">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="info-usuario">
+          <h2 id="perfil-nombre" class="nombre-usuario">Nombre</h2>
+          <p id="perfil-subinfo" class="linea-info">Estudiante en SkillSwap</p>
+          <p id="perfil-correo" class="linea-info"></p>
+          <p id="perfil-telefono" class="linea-info"></p>
+        </div>
+      </section>
+
+      <!-- Línea 65: Dos cuadros lado a lado de habilidades -->
+      <section class="grid-habilidades">
+        <div class="caja-seccion">
+          <div class="caja-header">Habilidades que puedo enseñar</div>
+          <div id="lista-ensena" class="caja-cuerpo"></div>
+        </div>
+
+        <div class="caja-seccion">
+          <div class="caja-header">Habilidades que quiero aprender</div>
+          <div id="lista-busca" class="caja-cuerpo"></div>
+        </div>
+      </section>
+
+      <!-- Línea 79: Cuadro inferior de disponibilidad -->
+      <section class="caja-seccion caja-disponibilidad">
+        <div class="caja-header">Disponibilidad</div>
+        <div id="caja-disponibilidad-cuerpo" class="caja-cuerpo"></div>
+      </section>
+
     </div>
   </main>
 

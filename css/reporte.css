@@ -1,0 +1,171 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f3f4f6;
+  color: #1f2937;
+  min-height: 100vh;
+}
+
+/* Barra superior azul oscuro */
+.barra-superior {
+  background-color: #172554;
+  height: 56px;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-volver {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 4px;
+  padding: 6px 14px;
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+
+.btn-volver:hover {
+  background-color: rgba(255, 255, 255, 0.14);
+}
+
+.icono-perfil-top {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icono-perfil-top svg {
+  width: 20px;
+  height: 20px;
+  fill: #475569;
+}
+
+/* Contenedor principal */
+.reporte-contenedor {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 36px 28px 60px;
+}
+
+.reporte-titulo {
+  font-size: 1.85rem;
+  font-weight: 500;
+  color: #111827;
+  margin-bottom: 6px;
+}
+
+.reporte-subtitulo {
+  font-size: 0.95rem;
+  color: #4b5563;
+  margin-bottom: 24px;
+}
+
+/* Caja azul claro con ícono de admiración (!) */
+.caja-aviso {
+  background-color: #e0f2fe;
+  border: 1px solid #38bdf8;
+  border-radius: 6px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.icono-admiracion {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #0284c7;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.caja-aviso p {
+  font-size: 0.92rem;
+  color: #0369a1;
+  line-height: 1.45;
+}
+
+/* Área del motivo */
+.grupo-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.grupo-campo label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.grupo-campo textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #9ca3af;
+  border-radius: 4px;
+  font-size: 0.92rem;
+  color: #1f2937;
+  outline: none;
+  resize: vertical;
+}
+
+.grupo-campo textarea:focus {
+  border-color: #2563eb;
+}
+
+/* Botones al final */
+.acciones-finales {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.btn-cancelar {
+  background-color: #ffffff;
+  color: #374151;
+  border: 1px solid #9ca3af;
+  border-radius: 4px;
+  padding: 9px 32px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.btn-cancelar:hover {
+  background-color: #f3f4f6;
+}
+
+.btn-enviar {
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 9px 28px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-enviar:hover {
+  background-color: #1d4ed8;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkillSwap - Inicio</title>
+  <link rel="stylesheet" href="./css/inicio.css">
+</head>
+<body>
+
+  <!-- Rectángulo superior oscuro -->
+  <header class="barra-superior">
+    <button type="button" id="btn-menu" class="btn-menu" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <button type="button" id="btn-icono-perfil" class="icono-perfil" title="Mi perfil" aria-label="Ir a mi perfil">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+      </svg>
+    </button>
+  </header>
+
+  <div class="zona-trabajo">
+    <!-- Menú lateral azul (se abre al apretar el botón de 3 líneas) -->
+    <aside id="menu-lateral" class="menu-lateral">
+      <button type="button" id="btn-opcion-2" class="btn-menu-lateral">Mi perfil</button>
+      <button type="button" id="btn-opcion-1" class="btn-menu-lateral">Solicitud</button>
+	  <button type="button" id="btn-opcion-reporte" class="btn-menu-lateral">reporte</button>
+    </aside>
+
+    <!-- Contenido principal -->
+    <main class="contenido">
+      <h1 id="titulo-bienvenida" class="bienvenida">Bienvenido a SkillSwap</h1>
+      <p class="subtitulo">Aprende algo nuevo y comparte lo que sabes</p>
+
+      <form class="barra-busqueda" id="form-buscar">
+        <input type="text" id="input-buscar" placeholder="Busca algo que aprender">
+        <button type="submit" class="btn-buscar">Buscar</button>
+      </form>
+
+      <h2 class="subseccion">Estudiantes recomendados</h2>
+      <div id="lista-estudiantes" class="grid-estudiantes"></div>
+    </main>
+  </div>
+
+  <!-- Modal para crear otro perfil con los mismos datos base cambiando solo enseña y busca -->
+  <div id="modal-solicitud" class="modal-solicitud" hidden>
+    <div class="modal-contenido">
+      <h3>Nueva solicitud de intercambio</h3>
+      <p id="info-base-solicitud" class="info-base"></p>
+
+      <form id="form-solicitud">
+        <div class="campo-modal">
+          <label for="solicitud-ensena">¿Qué habilidad enseñas ahora?</label>
+          <input type="text" id="solicitud-ensena">
+        </div>
+
+        <div class="campo-modal">
+          <label for="solicitud-busca">¿Qué habilidad buscas ahora?</label>
+          <input type="text" id="solicitud-busca">
+        </div>
+
+        <div class="acciones-modal">
+          <button type="button" id="btn-cancelar-solicitud" class="btn-secundario">Cancelar</button>
+          <button type="submit" class="btn-buscar">Crear perfil</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="./js/inicio.js"></script>
+</body>
+</html>

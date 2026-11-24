@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkillSwap - Registro</title>
+  <link rel="stylesheet" href="./css/registro.css">
+</head>
+<body>
+
+  <main class="contenedor-principal">
+    <!-- Columna Izquierda: Logo e Ilustración -->
+    <section class="columna-izquierda">
+      <div class="zona-logo">
+        <img src="./assets/logo.jpeg" alt="Logo SkillSwap" class="logo">
+      </div>
+      
+      <div class="zona-ilustracion">
+        <!-- Aquí colocas la ruta de la ilustración de los estudiantes -->
+        <img src="./assets/fotoRegistro.jpeg" alt="Estudiantes intercambiando habilidades" class="ilustracion">
+      </div>
+    </section>
+
+    <!-- Columna Derecha: Formulario -->
+    <section class="columna-derecha">
+      <h1 class="titulo-formulario">Registro de estudiante</h1>
+      <p class="subtitulo-formulario">Ingrese sus datos para crear la cuenta</p>
+
+      <form id="form-registro">
+        <div class="campo">
+          <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" required>
+        </div>
+
+        <div class="campo">
+          <input type="email" id="correo" name="correo" placeholder="Ingrese su correo electrónico" required>
+        </div>
+
+        <div class="campo">
+          <input type="tel" id="numero" name="numero" placeholder="Ingrese su teléfono" required>
+        </div>
+
+        <div class="campo">
+          <input type="text" id="ensena" name="ensena" placeholder="¿Qué habilidad enseñas?">
+        </div>
+
+        <div class="campo">
+          <input type="text" id="busca" name="busca" placeholder="¿Qué habilidad buscas?">
+        </div>
+		<div class="campo">
+		  <input type="text" id="dias" name="dias" placeholder="¿Qué dias disponible tiene?" required>
+		</div>
+		<div class="campo">
+		  <input type="text" id="turno" name="turno" placeholder="¿que hora disponible tiene?" required>
+		</div>
+
+        <!-- Campo de foto estilizado de forma limpia para encajar con el diseño -->
+        <div class="campo campo-archivo">
+          <label for="foto" class="etiqueta-archivo">Subir foto de perfil (opcional):</label>
+          <input type="file" id="foto" name="foto" accept="image/*">
+        </div>
+
+        <button type="submit" class="btn-crear">Registrarse</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="./js/registro.js"></script>
+</body>
+</html>

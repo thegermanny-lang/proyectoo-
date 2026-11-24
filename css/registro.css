@@ -1,0 +1,167 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  color: #333333;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contenedor principal dividido en dos mitades */
+.contenedor-principal {
+  display: flex;
+  width: 100%;
+  max-width: 1100px;
+  min-height: 600px;
+  background-color: #ffffff;
+}
+
+/* --- COLUMNA IZQUIERDA --- */
+.columna-izquierda {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  border-right: 1px solid #d9d9d9; /* Línea divisoria central de la imagen */
+}
+
+.zona-logo {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.logo {
+  max-width: 240px;
+  height: auto;
+}
+
+.zona-ilustracion {
+  text-align: center;
+}
+
+.ilustracion {
+  max-width: 100%;
+  width: 360px;
+  height: auto;
+}
+
+/* --- COLUMNA DERECHA --- */
+.columna-derecha {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 60px;
+}
+
+.titulo-formulario {
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: #222222;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.subtitulo-formulario {
+  font-size: 0.9rem;
+  color: #555555;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+#form-registro {
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.campo {
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+.campo input[type="text"],
+.campo input[type="email"],
+.campo input[type="tel"],
+.campo input[type="password"] {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  color: #333333;
+  background-color: #ffffff;
+  border: 1px solid #999999;
+  border-radius: 2px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.campo input::placeholder {
+  color: #666666;
+}
+
+.campo input:focus {
+  border-color: #2b70e4;
+}
+
+/* Estilo discreto para el input de archivo */
+.campo-archivo {
+  font-size: 0.85rem;
+  color: #555555;
+}
+
+.etiqueta-archivo {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.campo-archivo input[type="file"] {
+  width: 100%;
+  font-size: 0.85rem;
+}
+
+/* Botón azul estilo imagen */
+.btn-crear {
+  margin-top: 15px;
+  padding: 10px 42px;
+  background-color: #2b70e4;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-crear:hover {
+  background-color: #1f5bbf;
+}
+
+/* Adaptación para pantallas pequeñas (móviles/tablets) */
+@media (max-width: 768px) {
+  .contenedor-principal {
+    flex-direction: column;
+  }
+
+  .columna-izquierda {
+    border-right: none;
+    border-bottom: 1px solid #d9d9d9;
+    padding: 30px 20px;
+  }
+
+  .columna-derecha {
+    padding: 30px 20px;
+  }
+}

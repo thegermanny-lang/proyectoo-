@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkillSwap - Editar perfil</title>
+  <link rel="stylesheet" href="./css/editar-perfil.css">
+</head>
+<body>
+
+  <!-- Línea 14: Barra superior -->
+  <header class="barra-superior">
+    <button type="button" onclick="window.location.href='perfil.html'" class="btn-volver" title="Volver a mi perfil">← Mi perfil</button>
+    <div class="icono-perfil-top" title="Editar perfil">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+      </svg>
+    </div>
+  </header>
+
+  <!-- Línea 24: Contenedor principal -->
+  <main class="editar-contenedor">
+    <h1 class="editar-titulo">Editar perfil</h1>
+    <p class="editar-subtitulo">Actualiza tu información para que otros estudiantes te conozcan mejor</p>
+
+    <div id="sin-usuario" class="sin-usuario" style="display: none;">
+      No hay ningún perfil registrado para editar. <a href="registro.html">Ir a registro</a>
+    </div>
+
+    <form id="form-editar" style="display: none;">
+
+      <!-- Línea 36: Tarjeta superior con foto y campos -->
+      <section class="tarjeta-superior">
+        <div class="columna-foto">
+          <img id="edit-foto-preview" src="" alt="Foto de perfil" class="foto-preview" style="display: none;">
+          <div id="edit-avatar-defecto" class="avatar-defecto">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+            </svg>
+          </div>
+          <label for="input-foto" class="btn-cambiar-foto">Cambiar foto</label>
+          <input type="file" id="input-foto" accept="image/*" hidden>
+        </div>
+
+        <div class="columna-campos">
+          <div class="grupo-campo">
+            <label for="edit-nombre">Nombre completo</label>
+            <input type="text" id="edit-nombre" placeholder="Escribe tu nombre completo..." required>
+          </div>
+
+          <div class="grupo-campo">
+            <label for="edit-correo">Correo electrónico</label>
+            <input type="email" id="edit-correo" placeholder="Escribe tu correo..." required>
+          </div>
+
+          <div class="grupo-campo">
+            <label for="edit-numero">Teléfono / WhatsApp</label>
+            <input type="text" id="edit-numero" placeholder="Escribe tu número..." required>
+          </div>
+        </div>
+      </section>
+
+      <!-- Línea 72: Dos cajas de habilidades -->
+      <section class="grid-dos-columnas">
+        <div class="caja-bloque">
+          <div class="caja-header">Habilidades que puedo enseñar</div>
+          <div class="caja-cuerpo">
+            <div id="chips-ensena" class="lista-chips"></div>
+            <button type="button" id="btn-agregar-ensena" class="btn-agregar-item">+ Agregar habilidad</button>
+            <input type="text" id="edit-ensena" class="campo-oculto-texto" placeholder="Ej: Programación, Diseño gráfico">
+          </div>
+        </div>
+
+        <div class="caja-bloque">
+          <div class="caja-header">Habilidades que quiero aprender</div>
+          <div class="caja-cuerpo">
+            <div id="chips-busca" class="lista-chips"></div>
+            <button type="button" id="btn-agregar-busca" class="btn-agregar-item">+ Agregar habilidad</button>
+            <input type="text" id="edit-busca" class="campo-oculto-texto" placeholder="Ej: Inglés, Marketing digital">
+          </div>
+        </div>
+      </section>
+
+      <!-- Línea 94: Caja de disponibilidad -->
+      <section class="caja-bloque caja-disponibilidad">
+        <div class="caja-header">Disponibilidad</div>
+        <div class="caja-cuerpo">
+          <div id="lista-horarios" class="lista-horarios"></div>
+        
+          <div class="campos-disp-extra">
+            <input type="text" id="edit-dias" placeholder="Días disponibles (Ej: Lunes a viernes)">
+            <input type="text" id="edit-turno" placeholder="Horario (Ej: 16:00 PM - 20:00 PM)">
+          </div>
+        </div>
+      </section>
+
+      <!-- Línea 109: Botones Cancelar y Guardar cambios -->
+      <div class="acciones-finales">
+        <button type="button" id="btn-cancelar" class="btn-cancelar">Cancelar</button>
+        <button type="submit" class="btn-guardar">Guardar cambios</button>
+      </div>
+
+    </form>
+  </main>
+
+  <script src="./js/editar-perfil.js"></script>
+</body>
+</html>

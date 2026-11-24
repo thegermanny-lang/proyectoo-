@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkillSwap - Reportar un problema</title>
+  <link rel="stylesheet" href="./css/reporte.css">
+</head>
+<body>
+
+  <!-- Barra superior azul oscuro igual a las otras páginas -->
+  <header class="barra-superior">
+    <button type="button" onclick="window.location.href='inicio.html'" class="btn-volver" title="Volver a inicio">← Inicio</button>
+    <div class="icono-perfil-top" title="SkillSwap">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+      </svg>
+    </div>
+  </header>
+
+  <!-- Contenido principal centrado -->
+  <main class="reporte-contenedor">
+    <h1 class="reporte-titulo">Reportar un problema</h1>
+    <p class="reporte-subtitulo">Ayúdanos a mantener una comunidad segura y respetuosa</p>
+
+    <!-- Caja de aviso azul claro con ícono de admiración -->
+    <div class="caja-aviso">
+      <div class="icono-admiracion">!</div>
+      <p>Si consideras que hay un comportamiento inapropiado o un fallo en el sistema, puedes reportarlo aquí. Nuestro equipo revisará el caso.</p>
+    </div>
+
+    <!-- Formulario de motivo de reporte -->
+    <form id="form-reporte-pagina">
+      <div class="grupo-campo">
+        <label for="motivo-reporte">Motivo del reporte</label>
+        <textarea id="motivo-reporte" rows="6" placeholder="Describe el problema a detalle..." required></textarea>
+      </div>
+
+      <div class="acciones-finales">
+        <button type="button" id="btn-cancelar-reporte" class="btn-cancelar">Cancelar</button>
+        <button type="submit" id="btn-enviar-reporte" class="btn-enviar">Enviar reporte</button>
+      </div>
+    </form>
+  </main>
+
+  <!-- Librería EmailJS y Script -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="./js/reporte.js"></script>
+</body>
+</html>

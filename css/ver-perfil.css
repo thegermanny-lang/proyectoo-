@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  color: #1f2937;
+}
+
+.barra-superior {
+  background-color: #172554;
+  height: 56px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+}
+
+.btn-volver {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: #2563eb;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.btn-volver:hover {
+  background-color: #1d4ed8;
+}
+
+.contenedor-perfil {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+/* Título más grande */
+.titulo-perfil {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 32px;
+}
+
+/* Pantalla dividida en dos mitades */
+.mitades-perfil {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  background-color: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 40px;
+}
+
+.mitad-izquierda {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Foto rectangular y más grande */
+.foto-perfil-grande {
+	width: 100%;
+  max-width: 340px;
+  height: auto;
+  max-height: 420px;
+  border-radius: 8px;
+  object-fit: contain;
+  background-color: transparent;
+  
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Avatar rectangular por defecto si no subió foto */
+.avatar-grande {
+  width: 100%;
+  max-width: 320px;
+  height: 380px;
+  border-radius: 8px;
+  background-color: #e2e8f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #cbd5e1;
+}
+
+.avatar-grande svg {
+  width: 180px;
+  height: 180px;
+  fill: #334155;
+}
+
+/* Mitad derecha y letras más grandes */
+.mitad-derecha {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.dato-item {
+  font-size: 1.25rem; /* Tamaño de letra más grande */
+  color: #1f2937;
+  line-height: 1.5;
+}
+
+.dato-item strong {
+  color: #111827;
+  font-weight: 600;
+}
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+  .mitades-perfil {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 24px;
+  }
+
+  .foto-perfil-grande,
+  .avatar-grande {
+    height: 300px;
+  }
+
+  .mitad-derecha {
+    align-items: center;
+    text-align: left;
+  }
+}
